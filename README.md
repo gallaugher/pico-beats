@@ -8,15 +8,11 @@ Original code & beats files provided by @todbot. Thx for sharing your code & hel
 My example uses a Raspberry Pi Pico W (same wiring for plain Pico) wired as below:
 <img width="980" alt="pico stemma audio diagram" src="https://user-images.githubusercontent.com/20801687/221918995-33564c58-bb4b-43dc-88bb-013e9897aa3a.png">
 
-BUT I've had problems running on RP2040 processors (also tried on a QT Py RP2040). I found Mu regularly dropped the board & then the board couldn't connect as CIRCUITPY, so I had to do a complete re-install of CircuitPython to get things working again. Frustrating.
+Assumption is that you're using a speaker that has separate power. I used a Hamburger-style speaker that you can get from Amazon, Walmart, or SparkFun.
 
-I had much mroe reliable success with a CircuitPlayground Bluefruit. See comments in code for minor changes. For wiring for the CPB, connect I2C of STEMMA-QT cabling as follows:
+If you are modifying the code and using different files, BE SURE
+- that your path variable is set equal to the same folder name that holds audio files on your pico.
+- that your 12 file names (including .wav extension) are properly named in the beats list in the code.
+- that the mixer = audiomixer.Mixer line has the proper sample_rate
 
-Black to GND
-Red to 3.3v (not VOUT)
-Blue to A5 (also labeled SDA)
-Yellow to A4 (also labeled SCL)
-Clip two alligator clips to the RCA jack as shown above.
-
-Sleeve base of audio plug should connect to pad GND
-Tip of audo plug should connect to AUDIO. Assumption is that you're using a speaker that has separate power. I used a Hamburger-style speaker that you can get from Amazon, Walmart, or SparkFun.
+NOTE: To those who are using this example after viewing the lesson where we add a microSD card for more storage on the pic, you have differnet lines for all three examples above. These are mentioned in that lesson.
