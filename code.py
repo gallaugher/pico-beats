@@ -61,7 +61,6 @@ time.sleep(1.0)  # let drums play a bit
 while True:
     for i in range(len(beats)):
         if touch_pad[i].value:
-            print(f"You touched pad # {i}!")
             mixer.voice[i].level = 1.0 # When touched, increase to full volume
         else:
             mixer.voice[i].level = 0.0 # No touch, then set volume back to zero
